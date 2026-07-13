@@ -50,11 +50,13 @@ function ViewerBody({ data }: { data: GraphData }) {
 
   return (
     <main className="flex min-h-0 flex-1 flex-col gap-4 p-4">
-      <div className="bg-card/40 shrink-0 rounded-lg border p-2">
+      <div className="bg-card/40 flex max-h-[42dvh] shrink-0 flex-col rounded-lg border p-2">
         <h2 className="text-muted-foreground mb-1 px-1 text-xs font-semibold tracking-wide uppercase">
           Cell lineage
         </h2>
-        <CellLineageDiagram />
+        <div className="min-h-0 flex-1 overflow-auto">
+          <CellLineageDiagram />
+        </div>
       </div>
       <div className="grid min-h-0 flex-1 grid-cols-1 gap-4 pb-2 md:grid-cols-3 lg:grid-cols-4">
         <EntityColumn kind="disease" items={diseaseItems} />
