@@ -1,0 +1,106 @@
+{
+  "cells": [
+    { "id": "cell_hsc", "name": "Hematopoietic stem cell", "parentId": null, "lineage": "stem", "order": 0 },
+    { "id": "cell_myeloid_progenitor", "name": "Myeloid progenitor", "parentId": "cell_hsc", "lineage": "myeloid", "order": 0 },
+    { "id": "cell_lymphoid_progenitor", "name": "Lymphoid progenitor", "parentId": "cell_hsc", "lineage": "lymphoid", "order": 1 },
+
+    { "id": "cell_erythroblast", "name": "Erythroblast", "parentId": "cell_myeloid_progenitor", "lineage": "myeloid", "order": 0 },
+    { "id": "cell_myeloblast", "name": "Myeloblast", "parentId": "cell_myeloid_progenitor", "lineage": "myeloid", "order": 1 },
+    { "id": "cell_monoblast", "name": "Monoblast", "parentId": "cell_myeloid_progenitor", "lineage": "myeloid", "order": 2 },
+    { "id": "cell_megakaryocyte", "name": "Megakaryocyte", "parentId": "cell_myeloid_progenitor", "lineage": "myeloid", "order": 3 },
+
+    { "id": "cell_rbc", "name": "Red blood cell", "parentId": "cell_erythroblast", "lineage": "myeloid", "order": 0 },
+    { "id": "cell_granulocyte", "name": "Granulocyte (neutrophil / basophil / eosinophil)", "parentId": "cell_myeloblast", "lineage": "myeloid", "order": 0 },
+    { "id": "cell_monocyte", "name": "Monocyte", "parentId": "cell_monoblast", "lineage": "myeloid", "order": 0 },
+    { "id": "cell_platelet", "name": "Platelets", "parentId": "cell_megakaryocyte", "lineage": "myeloid", "order": 0 },
+
+    { "id": "cell_b_progenitor", "name": "B cell progenitor", "parentId": "cell_lymphoid_progenitor", "lineage": "lymphoid", "order": 0 },
+    { "id": "cell_t_progenitor", "name": "T cell progenitor", "parentId": "cell_lymphoid_progenitor", "lineage": "lymphoid", "order": 1 },
+
+    { "id": "cell_naive_b", "name": "Naive B cell", "parentId": "cell_b_progenitor", "lineage": "lymphoid", "order": 0 },
+    { "id": "cell_naive_t", "name": "Naive T cell", "parentId": "cell_t_progenitor", "lineage": "lymphoid", "order": 0 },
+
+    { "id": "cell_plasma", "name": "Plasma cell", "parentId": "cell_naive_b", "lineage": "lymphoid", "order": 0 },
+    { "id": "cell_mature_t", "name": "Mature T cell", "parentId": "cell_naive_t", "lineage": "lymphoid", "order": 0 }
+  ],
+  "diseases": [
+    { "id": "dis_aml", "name": "Acute myeloid leukemia", "abbreviation": "AML", "cellIds": ["cell_myeloblast", "cell_monoblast"] },
+    { "id": "dis_all", "name": "Acute lymphoblastic leukemia", "abbreviation": "ALL", "cellIds": ["cell_b_progenitor", "cell_t_progenitor"] },
+    { "id": "dis_cml", "name": "Chronic myeloid leukemia", "abbreviation": "CML", "cellIds": ["cell_myeloid_progenitor", "cell_granulocyte"] },
+    { "id": "dis_cll", "name": "Chronic lymphocytic leukemia", "abbreviation": "CLL", "cellIds": ["cell_naive_b"] },
+    { "id": "dis_dlbcl", "name": "Diffuse large B-cell lymphoma", "abbreviation": "DLBCL", "cellIds": ["cell_naive_b"] },
+    { "id": "dis_mm", "name": "Multiple myeloma", "abbreviation": "MM", "cellIds": ["cell_plasma"] }
+  ],
+  "regimens": [
+    { "id": "reg_7plus3", "name": "7+3 induction", "diseaseIds": ["dis_aml"] },
+    { "id": "reg_rchop", "name": "R-CHOP", "diseaseIds": ["dis_dlbcl"] },
+    { "id": "reg_hypercvad", "name": "Hyper-CVAD", "diseaseIds": ["dis_all"] },
+    { "id": "reg_imatinib_mono", "name": "Imatinib monotherapy", "diseaseIds": ["dis_cml"] },
+    { "id": "reg_fcr", "name": "FCR", "diseaseIds": ["dis_cll"] }
+  ],
+  "drugs": [
+    {
+      "id": "drug_cytarabine",
+      "name": "Cytarabine",
+      "mechanism": "Pyrimidine antimetabolite; incorporates into DNA and inhibits DNA polymerase, halting replication (S-phase specific).",
+      "toxicities": ["Myelosuppression", "Cerebellar toxicity (high dose)", "Conjunctivitis", "Mucositis"],
+      "regimenIds": ["reg_7plus3", "reg_hypercvad"]
+    },
+    {
+      "id": "drug_daunorubicin",
+      "name": "Daunorubicin",
+      "mechanism": "Anthracycline; intercalates DNA and inhibits topoisomerase II, generating free radicals.",
+      "toxicities": ["Cardiotoxicity (cumulative)", "Myelosuppression", "Alopecia", "Red urine discoloration"],
+      "regimenIds": ["reg_7plus3"]
+    },
+    {
+      "id": "drug_rituximab",
+      "name": "Rituximab",
+      "mechanism": "Anti-CD20 monoclonal antibody; depletes B cells via complement- and antibody-dependent cytotoxicity.",
+      "toxicities": ["Infusion reactions", "B-cell depletion / infection risk", "Hepatitis B reactivation"],
+      "regimenIds": ["reg_rchop", "reg_fcr"]
+    },
+    {
+      "id": "drug_cyclophosphamide",
+      "name": "Cyclophosphamide",
+      "mechanism": "Alkylating agent; cross-links DNA strands preventing replication.",
+      "toxicities": ["Hemorrhagic cystitis", "Myelosuppression", "Nausea", "Secondary malignancy"],
+      "regimenIds": ["reg_rchop", "reg_hypercvad", "reg_fcr"]
+    },
+    {
+      "id": "drug_doxorubicin",
+      "name": "Doxorubicin",
+      "mechanism": "Anthracycline; intercalates DNA and inhibits topoisomerase II.",
+      "toxicities": ["Cardiotoxicity (cumulative)", "Myelosuppression", "Alopecia"],
+      "regimenIds": ["reg_rchop", "reg_hypercvad"]
+    },
+    {
+      "id": "drug_vincristine",
+      "name": "Vincristine",
+      "mechanism": "Vinca alkaloid; binds tubulin and inhibits microtubule assembly, arresting mitosis (M-phase).",
+      "toxicities": ["Peripheral neuropathy", "Constipation / ileus", "SIADH"],
+      "regimenIds": ["reg_rchop", "reg_hypercvad"]
+    },
+    {
+      "id": "drug_prednisone",
+      "name": "Prednisone",
+      "mechanism": "Glucocorticoid; induces apoptosis in lymphoid cells and reduces inflammation.",
+      "toxicities": ["Hyperglycemia", "Immunosuppression", "Mood changes", "Osteoporosis"],
+      "regimenIds": ["reg_rchop", "reg_hypercvad"]
+    },
+    {
+      "id": "drug_imatinib",
+      "name": "Imatinib",
+      "mechanism": "BCR-ABL tyrosine kinase inhibitor; blocks the constitutively active kinase driving CML.",
+      "toxicities": ["Edema", "Myelosuppression", "Muscle cramps", "Hepatotoxicity"],
+      "regimenIds": ["reg_imatinib_mono"]
+    },
+    {
+      "id": "drug_fludarabine",
+      "name": "Fludarabine",
+      "mechanism": "Purine antimetabolite; inhibits DNA synthesis and ribonucleotide reductase.",
+      "toxicities": ["Profound immunosuppression", "Myelosuppression", "Autoimmune hemolytic anemia"],
+      "regimenIds": ["reg_fcr"]
+    }
+  ]
+}
