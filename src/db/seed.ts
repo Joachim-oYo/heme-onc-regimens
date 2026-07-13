@@ -1,6 +1,4 @@
-import { config } from "dotenv";
-config({ path: ".env.local" });
-
+// Env is loaded via `tsx --env-file=.env.local` (see package.json db:seed).
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
