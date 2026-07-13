@@ -1,0 +1,40 @@
+Category,Disease,Cell,Therapy,HSCT?,Notes
+myeloproliferative neoplasm (MPN),chronic myeloid leukemia (CML),granulocyte progenitor,"TKI (asciminib, imatinib, dasatinib)",no,
+myeloproliferative neoplasm (MPN),polycythemia vera (PV),erythroid progenitor,"phlebotomy, aspirin, hydroxyurea, IFNa (if potential for pregnancy)",no,
+myeloproliferative neoplasm (MPN),essential thrombocythemia (ET),megakaryocytic progenitor,"aspirin, hydroxyurea, IFNa, anagrelide",no,
+myeloproliferative neoplasm (MPN),primary myelofibrosis (PMF),fibroblast,"JAKi, hydroxyurea, ruloxitinib, momelotinib",allogeneic,
+myeloproliferative neoplasm (MPN),chronic neutrophilic leukemia (CNL),mature granulocyte,,,
+myeloproliferative neoplasm (MPN),chronic eosinophilic leukemia (CEL),"eosinophil progenitors, eosinophils",imatinib,,
+myeloproliferative neoplasm (MPN),myeloproliferative neoplasm unclassifiable,,,,
+myelodysplastic syndrome (MDS),myelodysplastic syndrome (MDS),myeloblast,"anemia: lenalidomide (del(5q)), luspatercept (SF3B1 mutated)
+multiple cytopenias: azacitadine, decitabine",allogeneic,
+MDS/MPN syndrome,chronic monomyelocytic leukemia (CMML),"myeloblast, monoblast","hydroxyurea, azacidatine, decitabine",allogeneic,
+acute myeloid leukemia (AML),acute myeloid leukemia (AML),myeloblast,"fit: 7+3 (cytarabine + idarubicin or doxorubicin)
+unfit: azacitidine, decitabine, +venetoclax, +ivosidinib",no,
+precursor lymphoid neoplasms,B cell acute lymphocytic leukemia (B cell ALL),B cell progenitor,"hyper-CVAD (part A: cyclophosphamide, vincristine, doxorubicin, dexamethasone; part B: methotrexate, cytarabine)",no,
+precursor lymphoid neoplasms,T cell acute lymphocytic leukemia (T cell ALL),T cell progenitor,"cyclophosphamide, vincristine, anthracycline (daunorubicin, doxorubicin), L-asparaginase, steroid (prednisone, dexamethasone)",no,
+mature B cell neoplasms,chronic lymphocytic leukemia (CLL) / small lymphocytic lymphoma (SLL),"mature B cell (majority), naive B cell (minority)","initial: BTK inhibitor (ibrutinib, acalabrutinib, zanibrutinib), obinutuzumab, venetoclax
+refractory: BR (bendamustine + rituximab)",no,
+mature B cell neoplasms,"lymphoplasmacytic lymphoma (LPL), Waldenström's macroglobulinemia",post-germinal center B cell,"BR (bendaumstine + rituximab), DRC (dexamethasone, rituximab, cylocphosphamide), BTKi",no,
+mature B cell neoplasms,multiple myeloma (MM),plasma cell,,autologous,
+mature B cell neoplasms,hairy cell leukemia (HCL),late activated memory B cell,"initial: cladribine +/- rituximab
+refractory: pentostatin or vemurafenib + rituximab",no,
+mature B cell neoplasms,marginal zone lymphoma,marginal zone B cell,"initial: rituximab (+R-CHOP if severe symptoms), obinutuzumab
+refractory: zanubrutinib, lenalidomide + rituximab, CAR-T",autologous (RARE),"hemeonc.org
+initial: chlorambucil, ibrutinib
+refractory: BR, Ox-P, pritobrutinib, zanubrutinib, R-CHOP, CAR-T"
+mature B cell neoplasms,follicular lymphoma,germinal center B cell,,,
+mature B cell neoplasms,mantle cell lymphoma,"naive B cell (80%), mature B cell (20%)",,,
+mature B cell neoplasms,diffuse large B cell lymphoma (DLBCL),mature B cell,,,
+mature B cell neoplasms,Burkitt lymphoma,germinal center B cell,"pre-phase: CVP (cyclophosphamide, vincristine, prednisone)
+initial: CODOX-M + IVAC, CALGB 9251, hyperCVAD, dose-adjusted EPOCH (AIDS-related)
+consolidation: CYM (cytarabine + methotrexate), CYVE (cytarabine + etoposide)
+maintenance: COPAD (cyclophosphamide, vincristine, prednisone, doxorubicin) + methotrexate (COPADM) or CYVE",allogeneic,
+Hodgkin lymphoma,Hodgkin lymphoma,germinal center B cell,,,
+Mature T cell lineage,peripheral T cell lymphoma (PTCL),mature T cell,,,
+Mature T cell lineage,primary cutaneous T cell lymphoma,mature T cell,,,
+Mature T cell lineage,adult T cell leukemia/lymphoma,mature T cell,,,
+Mature T cell lineage,T cell large granular lymphocyte (LGL) leukemia,mature T cell,,,
+Mature T cell lineage,T cell prolymphocytic leukemia,mature T cell,,,
+Mature NK cell lineage,NK cell large granular lymphocyte (LDL) leukemia,mature NK cell,,,
+Mature NK cell lineage,Aggressive NK cell leukemia,mature NK cell,,,
