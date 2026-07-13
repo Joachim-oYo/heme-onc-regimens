@@ -35,7 +35,7 @@ export function AppShell({
       <header className="flex items-center justify-between gap-3 border-b px-4 py-2.5">
         <div className="flex items-baseline gap-2">
           <Link href="/" className="text-base font-semibold tracking-tight">
-            Onc Regimens
+            Heme-Onc Regimens
           </Link>
           <span className="text-muted-foreground hidden text-xs sm:inline">
             hover / tap a cell, disease, regimen, or drug to trace the cascade

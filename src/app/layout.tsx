@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Onc Regimens",
+  title: "Heme-Onc Regimens",
   description:
     "Interactively trace the cascade from hematopoietic cells to diseases, treatment regimens, and drugs.",
 };

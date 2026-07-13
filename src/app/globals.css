@@ -129,7 +129,7 @@
   }
 }
 
-/* ---- Onc Regimens tier accent colors ---- */
+/* ---- Heme-Onc Regimens tier accent colors ---- */
 /* Each tier (cell/disease/regimen/drug) gets a distinct hue so the cascade
    reads across the four columns. Values chosen for AA contrast in both modes. */
 :root {

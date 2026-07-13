@@ -34,7 +34,7 @@ export function Editor({ data }: { data: GraphData }) {
       <header className="flex items-center justify-between gap-3 border-b px-4 py-2.5">
         <div className="flex items-baseline gap-2">
           <span className="text-base font-semibold tracking-tight">
-            Onc Regimens — Editor
+            Heme-Onc Regimens — Editor
           </span>
           <span className="text-muted-foreground hidden text-xs sm:inline">
             add, edit, and connect entities

@@ -61,7 +61,7 @@ export default function LoginPage() {
   return (
     <main className="flex min-h-dvh flex-col items-center justify-center gap-6 p-6">
       <div className="text-center">
-        <h1 className="text-lg font-semibold">Onc Regimens — Editor</h1>
+        <h1 className="text-lg font-semibold">Heme-Onc Regimens — Editor</h1>
         <p className="text-muted-foreground text-sm">Sign in to add or edit entities.</p>
       </div>
       <Suspense>
