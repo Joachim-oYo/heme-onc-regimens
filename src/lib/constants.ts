@@ -35,10 +35,6 @@ export const KIND_ID_PREFIX: Record<EntityKind, string> = {
   drug: "drug",
 };
 
-/** Cell lineage tags used for grouping / coloring the diagram. */
-export const LINEAGES = ["stem", "myeloid", "lymphoid"] as const;
-export type Lineage = (typeof LINEAGES)[number];
-
 /**
  * The "up-chain" relationship for each kind: the kind it points to and the
  * field name that holds those IDs. Cells sit at the top and own no cross-tier

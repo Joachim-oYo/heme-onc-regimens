@@ -38,7 +38,6 @@ async function main() {
       id: cell.id,
       name: cell.name,
       parentId: cell.parentId,
-      lineage: cell.lineage,
       order: cell.order,
     });
   }

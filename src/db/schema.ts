@@ -5,7 +5,6 @@ import {
   primaryKey,
   type AnyPgColumn,
 } from "drizzle-orm/pg-core";
-import { LINEAGES } from "@/lib/constants";
 
 /**
  * Postgres schema. Entity tables hold intrinsic fields; many-to-many edges
@@ -16,12 +15,11 @@ import { LINEAGES } from "@/lib/constants";
 export const cells = pgTable("cells", {
   id: text("id").primaryKey(),
   name: text("name").notNull(),
-  // Lineage parent (self-reference). HSC has null. Deleting a parent nulls
+  // Tree parent (self-reference). HSC has null. Deleting a parent nulls
   // children rather than deleting them.
   parentId: text("parent_id").references((): AnyPgColumn => cells.id, {
     onDelete: "set null",
   }),
-  lineage: text("lineage", { enum: LINEAGES }),
   order: integer("order"),
 });
 

@@ -14,11 +14,11 @@ import type { GraphData } from "./types";
  */
 const data: GraphData = {
   cells: [
-    { id: "hsc", name: "HSC", parentId: null, lineage: "stem", order: 0 },
-    { id: "myeloid", name: "Myeloid", parentId: "hsc", lineage: "myeloid", order: 0 },
-    { id: "myeloblast", name: "Myeloblast", parentId: "myeloid", lineage: "myeloid", order: 0 },
-    { id: "monoblast", name: "Monoblast", parentId: "myeloid", lineage: "myeloid", order: 1 },
-    { id: "lonely", name: "Lonely cell", parentId: null, lineage: null, order: 0 },
+    { id: "hsc", name: "HSC", parentId: null, order: 0 },
+    { id: "myeloid", name: "Myeloid", parentId: "hsc", order: 0 },
+    { id: "myeloblast", name: "Myeloblast", parentId: "myeloid", order: 0 },
+    { id: "monoblast", name: "Monoblast", parentId: "myeloid", order: 1 },
+    { id: "lonely", name: "Lonely cell", parentId: null, order: 0 },
   ],
   diseases: [
     { id: "aml", name: "AML", abbreviation: "AML", cellIds: ["myeloblast", "monoblast"] },

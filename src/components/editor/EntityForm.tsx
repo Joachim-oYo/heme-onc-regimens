@@ -7,14 +7,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { KIND_LABEL, LINEAGES, type EntityKind } from "@/lib/constants";
+import { KIND_LABEL, type EntityKind } from "@/lib/constants";
 import type { GraphData, EntityByKind } from "@/lib/types";
 import { createEntity, updateEntity } from "@/lib/apiClient";
 
 /**
  * Generic create/edit form for any entity kind. Fields are driven by `kind`:
- * every kind has a name; drugs add mechanism + toxicities; cells add a lineage
- * parent + lineage tag; disease/regimen/drug add an up-chain relationship
+ * every kind has a name; drugs add mechanism + toxicities; cells add a tree
+ * parent; disease/regimen/drug add an up-chain relationship
  * multi-select. Submits to the API and refreshes the router on success.
  */
 export function EntityForm<K extends EntityKind>({
@@ -45,9 +45,6 @@ export function EntityForm<K extends EntityKind>({
   );
   const [parentId, setParentId] = useState<string | null>(
     (existing as EntityByKind["cell"] | undefined)?.parentId ?? null,
-  );
-  const [lineage, setLineage] = useState<string | null>(
-    (existing as EntityByKind["cell"] | undefined)?.lineage ?? null,
   );
   const [relIds, setRelIds] = useState<string[]>(
     kind === "disease"
@@ -88,7 +85,6 @@ export function EntityForm<K extends EntityKind>({
         return {
           name,
           parentId,
-          lineage: (lineage || null) as never,
           order: (existing as EntityByKind["cell"] | undefined)?.order ?? null,
         };
       case "disease":
@@ -147,34 +143,16 @@ export function EntityForm<K extends EntityKind>({
       ) : null}
 
       {kind === "cell" ? (
-        <>
-          <div className="space-y-1.5">
-            <Label>Lineage parent</Label>
-            <RelationshipMultiSelect
-              options={parentOptions}
-              value={parentId ? [parentId] : []}
-              onChange={(ids) => setParentId(ids.length ? ids[ids.length - 1] : null)}
-              placeholder="No parent (root)"
-              emptyText="No other cells."
-            />
-          </div>
-          <div className="space-y-1.5">
-            <Label htmlFor="ef-lineage">Lineage tag</Label>
-            <select
-              id="ef-lineage"
-              value={lineage ?? ""}
-              onChange={(e) => setLineage(e.target.value || null)}
-              className="border-input bg-background h-9 w-full rounded-md border px-3 text-sm"
-            >
-              <option value="">None</option>
-              {LINEAGES.map((l) => (
-                <option key={l} value={l}>
-                  {l}
-                </option>
-              ))}
-            </select>
-          </div>
-        </>
+        <div className="space-y-1.5">
+          <Label>Lineage parent</Label>
+          <RelationshipMultiSelect
+            options={parentOptions}
+            value={parentId ? [parentId] : []}
+            onChange={(ids) => setParentId(ids.length ? ids[ids.length - 1] : null)}
+            placeholder="No parent (root)"
+            emptyText="No other cells."
+          />
+        </div>
       ) : null}
 
       {kind === "drug" ? (

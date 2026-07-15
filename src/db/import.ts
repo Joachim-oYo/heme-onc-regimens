@@ -172,12 +172,12 @@ async function main() {
     return id;
   }
 
-  // Cells (no cross-tier edges; lineage parent left null for imported cells).
+  // Cells (no cross-tier edges; tree parent left null for imported cells).
   for (const c of cells.values()) {
     const id = idFor("cell", c.name, cellIdByName);
     await db
       .insert(schema.cells)
-      .values({ id, name: c.name, parentId: null, lineage: null, order: null })
+      .values({ id, name: c.name, parentId: null, order: null })
       .onConflictDoUpdate({ target: schema.cells.id, set: { name: c.name } });
   }
 

@@ -49,7 +49,6 @@ export async function readGraphData(): Promise<GraphData> {
         id: c.id,
         name: c.name,
         parentId: c.parentId,
-        lineage: c.lineage,
         order: c.order,
       }),
     ),
@@ -126,7 +125,6 @@ export async function createCell(id: string, input: InputByKind["cell"]) {
     id,
     name: input.name,
     parentId: input.parentId,
-    lineage: input.lineage,
     order: input.order,
   });
 }
@@ -139,7 +137,6 @@ export async function updateCell(id: string, input: InputByKind["cell"]) {
     .set({
       name: input.name,
       parentId: input.parentId,
-      lineage: input.lineage,
       order: input.order,
     })
     .where(eq(schema.cells.id, id));

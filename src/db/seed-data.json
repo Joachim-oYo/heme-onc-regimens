@@ -1,27 +1,27 @@
 {
   "cells": [
-    { "id": "cell_hsc", "name": "Hematopoietic stem cell", "parentId": null, "lineage": "stem", "order": 0 },
-    { "id": "cell_myeloid_progenitor", "name": "Myeloid progenitor", "parentId": "cell_hsc", "lineage": "myeloid", "order": 0 },
-    { "id": "cell_lymphoid_progenitor", "name": "Lymphoid progenitor", "parentId": "cell_hsc", "lineage": "lymphoid", "order": 1 },
+    { "id": "cell_hsc", "name": "Hematopoietic stem cell", "parentId": null, "order": 0 },
+    { "id": "cell_myeloid_progenitor", "name": "Myeloid progenitor", "parentId": "cell_hsc", "order": 0 },
+    { "id": "cell_lymphoid_progenitor", "name": "Lymphoid progenitor", "parentId": "cell_hsc", "order": 1 },
 
-    { "id": "cell_erythroblast", "name": "Erythroblast", "parentId": "cell_myeloid_progenitor", "lineage": "myeloid", "order": 0 },
-    { "id": "cell_myeloblast", "name": "Myeloblast", "parentId": "cell_myeloid_progenitor", "lineage": "myeloid", "order": 1 },
-    { "id": "cell_monoblast", "name": "Monoblast", "parentId": "cell_myeloid_progenitor", "lineage": "myeloid", "order": 2 },
-    { "id": "cell_megakaryocyte", "name": "Megakaryocyte", "parentId": "cell_myeloid_progenitor", "lineage": "myeloid", "order": 3 },
+    { "id": "cell_erythroblast", "name": "Erythroblast", "parentId": "cell_myeloid_progenitor", "order": 0 },
+    { "id": "cell_myeloblast", "name": "Myeloblast", "parentId": "cell_myeloid_progenitor", "order": 1 },
+    { "id": "cell_monoblast", "name": "Monoblast", "parentId": "cell_myeloid_progenitor", "order": 2 },
+    { "id": "cell_megakaryocyte", "name": "Megakaryocyte", "parentId": "cell_myeloid_progenitor", "order": 3 },
 
-    { "id": "cell_rbc", "name": "Red blood cell", "parentId": "cell_erythroblast", "lineage": "myeloid", "order": 0 },
-    { "id": "cell_granulocyte", "name": "Granulocyte (neutrophil / basophil / eosinophil)", "parentId": "cell_myeloblast", "lineage": "myeloid", "order": 0 },
-    { "id": "cell_monocyte", "name": "Monocyte", "parentId": "cell_monoblast", "lineage": "myeloid", "order": 0 },
-    { "id": "cell_platelet", "name": "Platelets", "parentId": "cell_megakaryocyte", "lineage": "myeloid", "order": 0 },
+    { "id": "cell_rbc", "name": "Red blood cell", "parentId": "cell_erythroblast", "order": 0 },
+    { "id": "cell_granulocyte", "name": "Granulocyte (neutrophil / basophil / eosinophil)", "parentId": "cell_myeloblast", "order": 0 },
+    { "id": "cell_monocyte", "name": "Monocyte", "parentId": "cell_monoblast", "order": 0 },
+    { "id": "cell_platelet", "name": "Platelets", "parentId": "cell_megakaryocyte", "order": 0 },
 
-    { "id": "cell_b_progenitor", "name": "B cell progenitor", "parentId": "cell_lymphoid_progenitor", "lineage": "lymphoid", "order": 0 },
-    { "id": "cell_t_progenitor", "name": "T cell progenitor", "parentId": "cell_lymphoid_progenitor", "lineage": "lymphoid", "order": 1 },
+    { "id": "cell_b_progenitor", "name": "B cell progenitor", "parentId": "cell_lymphoid_progenitor", "order": 0 },
+    { "id": "cell_t_progenitor", "name": "T cell progenitor", "parentId": "cell_lymphoid_progenitor", "order": 1 },
 
-    { "id": "cell_naive_b", "name": "Naive B cell", "parentId": "cell_b_progenitor", "lineage": "lymphoid", "order": 0 },
-    { "id": "cell_naive_t", "name": "Naive T cell", "parentId": "cell_t_progenitor", "lineage": "lymphoid", "order": 0 },
+    { "id": "cell_naive_b", "name": "Naive B cell", "parentId": "cell_b_progenitor", "order": 0 },
+    { "id": "cell_naive_t", "name": "Naive T cell", "parentId": "cell_t_progenitor", "order": 0 },
 
-    { "id": "cell_plasma", "name": "Plasma cell", "parentId": "cell_naive_b", "lineage": "lymphoid", "order": 0 },
-    { "id": "cell_mature_t", "name": "Mature T cell", "parentId": "cell_naive_t", "lineage": "lymphoid", "order": 0 }
+    { "id": "cell_plasma", "name": "Plasma cell", "parentId": "cell_naive_b", "order": 0 },
+    { "id": "cell_mature_t", "name": "Mature T cell", "parentId": "cell_naive_t", "order": 0 }
   ],
   "diseases": [
     { "id": "dis_aml", "name": "Acute myeloid leukemia", "abbreviation": "AML", "cellIds": ["cell_myeloblast", "cell_monoblast"] },

@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { LINEAGES } from "./constants";
 
 /**
  * Zod schemas for the four entity kinds. These validate API payloads and are
@@ -17,7 +16,6 @@ export const CellSchema = z.object({
   id: z.string(),
   name: nonEmpty,
   parentId: z.string().nullable(),
-  lineage: z.enum(LINEAGES).nullable(),
   order: z.number().int().nullable(),
 });
 

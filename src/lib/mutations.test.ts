@@ -5,8 +5,8 @@ import type { GraphData } from "./types";
 
 const valid: GraphData = {
   cells: [
-    { id: "a", name: "A", parentId: null, lineage: null, order: 0 },
-    { id: "b", name: "B", parentId: "a", lineage: null, order: 0 },
+    { id: "a", name: "A", parentId: null, order: 0 },
+    { id: "b", name: "B", parentId: "a", order: 0 },
   ],
   diseases: [{ id: "d", name: "D", abbreviation: null, cellIds: ["a"] }],
   regimens: [{ id: "r", name: "R", diseaseIds: ["d"] }],

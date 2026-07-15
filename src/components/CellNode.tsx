@@ -29,7 +29,6 @@ export function CellNode({ node }: { node: PositionedNode }) {
       data-source={props["data-source"]}
       data-dimmed={props["data-dimmed"]}
       data-lineage={props["data-lineage"]}
-      data-cell-lineage={cell.lineage ?? undefined}
       aria-pressed={props["aria-pressed"]}
       onPointerEnter={props.onPointerEnter}
       onPointerLeave={props.onPointerLeave}

@@ -137,18 +137,12 @@
   --tier-disease: oklch(0.6 0.17 25); /* red */
   --tier-regimen: oklch(0.62 0.15 265); /* blue */
   --tier-drug: oklch(0.68 0.15 85); /* amber */
-  --lineage-myeloid: oklch(0.62 0.13 40);
-  --lineage-lymphoid: oklch(0.6 0.14 285);
-  --lineage-stem: oklch(0.55 0.05 260);
 }
 .dark {
   --tier-cell: oklch(0.72 0.15 155);
   --tier-disease: oklch(0.7 0.17 25);
   --tier-regimen: oklch(0.72 0.15 265);
   --tier-drug: oklch(0.78 0.15 85);
-  --lineage-myeloid: oklch(0.72 0.13 40);
-  --lineage-lymphoid: oklch(0.7 0.14 285);
-  --lineage-stem: oklch(0.7 0.05 260);
 }
 
 @theme inline {
@@ -186,20 +180,5 @@
     border-color: var(--node-accent);
     border-style: dashed;
     @apply opacity-80;
-  }
-  /* Cell lineage color-coding. The tag (stem/myeloid/lymphoid) redirects the
-     node accent to its branch color, so highlight rings match, and shows a
-     persistent left marker so the grouping reads even with nothing selected. */
-  .entity-node[data-cell-lineage="stem"] {
-    --node-accent: var(--lineage-stem);
-    border-left: 3px solid var(--lineage-stem);
-  }
-  .entity-node[data-cell-lineage="myeloid"] {
-    --node-accent: var(--lineage-myeloid);
-    border-left: 3px solid var(--lineage-myeloid);
-  }
-  .entity-node[data-cell-lineage="lymphoid"] {
-    --node-accent: var(--lineage-lymphoid);
-    border-left: 3px solid var(--lineage-lymphoid);
   }
 }
