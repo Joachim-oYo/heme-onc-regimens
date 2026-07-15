@@ -187,4 +187,19 @@
     border-style: dashed;
     @apply opacity-80;
   }
+  /* Cell lineage color-coding. The tag (stem/myeloid/lymphoid) redirects the
+     node accent to its branch color, so highlight rings match, and shows a
+     persistent left marker so the grouping reads even with nothing selected. */
+  .entity-node[data-cell-lineage="stem"] {
+    --node-accent: var(--lineage-stem);
+    border-left: 3px solid var(--lineage-stem);
+  }
+  .entity-node[data-cell-lineage="myeloid"] {
+    --node-accent: var(--lineage-myeloid);
+    border-left: 3px solid var(--lineage-myeloid);
+  }
+  .entity-node[data-cell-lineage="lymphoid"] {
+    --node-accent: var(--lineage-lymphoid);
+    border-left: 3px solid var(--lineage-lymphoid);
+  }
 }
